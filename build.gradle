@@ -2,6 +2,19 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository url: "file://${projectDir}/repository"
+            pom.groupId = 'com.farmanlab'
+            pom.artifactId = 'numberpickerdialog'
+            pom.version = '0.1.0'
+        }
+    }
+}
+
 android {
     compileSdkVersion 27
 
@@ -21,7 +34,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
