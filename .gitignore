@@ -1,1 +1,26 @@
 /build
+
+# IDE files
+*.iml
+*.ipr
+*.iws
+.idea/*
+
+# application files
+*.apk
+*.ap_
+
+# Java class files
+*.class
+
+# dex VM
+*.dex
+
+# generated files
+bin/
+gen/
+
+# Local configuration
+local.properties
+gradle.properties
+idea.properties
