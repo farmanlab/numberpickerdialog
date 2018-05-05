@@ -1,19 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
-
-apply plugin: 'maven'
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository url: "file://${projectDir}/repository"
-            pom.groupId = 'com.farmanlab'
-            pom.artifactId = 'numberpickerdialog'
-            pom.version = '0.1.0'
-        }
-    }
-}
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 27
@@ -49,3 +37,14 @@ dependencies {
 }
 
 apply plugin: 'kotlin-android-extensions'
+
+publish {
+    userOrg = 'farmanlabdev'
+    groupId = 'com.farmanlab'
+    artifactId = 'numberpicker-dialog'
+    publishVersion = "0.1.0"
+    desc = 'Multiple numberpickers in dialog fragment make easy.'
+    website = 'https://github.com/farmanlab/numberpickerdialog'
+}
+
+apply from: 'publish.gradle'
